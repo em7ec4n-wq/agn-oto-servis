@@ -77,13 +77,31 @@ export function ServiceRequestTool() {
   const isFormValid = !isExampleMode && isBrandValid && isYearValid && isServiceValid && isNoteValid;
 
   const whatsappUrl = useMemo(() => {
-    if (!isFormValid || !selectedService) return '#talep';
-    let msg = `Merhaba AGN Oto Servis, Kepez servisinizden ${selectedService.title} için randevu ve fiyat bilgisi rica ediyorum. Aracım ${trimmedBrand}, ${trimmedYear} model.`;
-    if (trimmedNote.length > 0) {
-      msg += ` Not: ${trimmedNote}.`;
+    const parts: string[] = [];
+    if (selectedService) {
+      parts.push(
+        `Merhaba AGN Oto Servis, Kepez servisinizden ${selectedService.title} için randevu ve fiyat bilgisi rica ediyorum.`
+      );
+    } else {
+      parts.push(
+        'Merhaba AGN Oto Servis, Kepez servisinizden bilgi ve randevu almak istiyorum.'
+      );
     }
-    return `https://wa.me/${SITE_META.whatsappNumber}?text=${encodeURIComponent(msg)}`;
-  }, [isFormValid, selectedService, trimmedBrand, trimmedYear, trimmedNote]);
+
+    if (trimmedBrand && isYearValid) {
+      parts.push(`Aracım ${trimmedBrand}, ${trimmedYear} model.`);
+    } else if (trimmedBrand) {
+      parts.push(`Aracım ${trimmedBrand}.`);
+    } else if (isYearValid) {
+      parts.push(`Araç model yılı: ${trimmedYear}.`);
+    }
+
+    if (trimmedNote.length > 0) {
+      parts.push(`Not: ${trimmedNote}.`);
+    }
+
+    return `https://wa.me/${SITE_META.whatsappNumber}?text=${encodeURIComponent(parts.join(' '))}`;
+  }, [selectedService, trimmedBrand, isYearValid, trimmedYear, trimmedNote]);
 
   // If example mode is active (?ornek=1), render the exact DOM and values of AGN-Modern-Referans.html
   if (isExampleMode) {
@@ -150,12 +168,11 @@ export function ServiceRequestTool() {
                 </p>
                 <a
                   className="btn whatsapp"
-                  href="#talep"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsExampleMode(false);
-                  }}
-                  title="Örnek önizleme verileri WhatsApp'a gönderilmez. Kendi talebinizi girmek için tıklayın."
+                  href={`https://wa.me/${SITE_META.whatsappNumber}?text=${encodeURIComponent(
+                    'Merhaba AGN Oto Servis, Kepez servisinizden bilgi ve randevu almak istiyorum.'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   WhatsApp’tan İlet <span>↗</span>
                 </a>
@@ -314,33 +331,14 @@ export function ServiceRequestTool() {
                 </p>
               )}
 
-              {isFormValid ? (
-                <a
-                  className="btn whatsapp"
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp’tan İlet <span>↗</span>
-                </a>
-              ) : (
-                <button
-                  type="button"
-                  className="btn whatsapp"
-                  disabled
-                  aria-disabled="true"
-                  onClick={() =>
-                    setTouched({
-                      brandModel: true,
-                      year: true,
-                      serviceSlug: true,
-                      note: true,
-                    })
-                  }
-                >
-                  WhatsApp’tan İlet <span>↗</span>
-                </button>
-              )}
+              <a
+                className="btn whatsapp"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp’tan İlet <span>↗</span>
+              </a>
             </div>
           </div>
         </div>

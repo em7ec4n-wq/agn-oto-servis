@@ -10,7 +10,6 @@ function easeInOutQuart(t: number): number {
 export function AntalyaMapDriveSlider() {
   const [progress, setProgress] = useState(0);
   const [arrived, setArrived] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const routePathRef = useRef<SVGPathElement | null>(null);
   const carGroupRef = useRef<SVGGElement | null>(null);
@@ -47,7 +46,6 @@ export function AntalyaMapDriveSlider() {
   const startDrive = useCallback(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
     setArrived(false);
-    setIsPlaying(true);
 
     const DRIVE_MS = 3200;
     const startTime = performance.now();
@@ -63,7 +61,6 @@ export function AntalyaMapDriveSlider() {
       if (rawT < 1) {
         rafRef.current = requestAnimationFrame(step);
       } else {
-        setIsPlaying(false);
         setArrived(true);
       }
     };
@@ -106,7 +103,6 @@ export function AntalyaMapDriveSlider() {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
     }
-    setIsPlaying(false);
     const val = Number(e.target.value);
     setProgress(val);
     setArrived(val >= 98);
@@ -142,7 +138,6 @@ export function AntalyaMapDriveSlider() {
                 type="button"
                 className="hud-mini-btn"
                 onClick={startDrive}
-                disabled={isPlaying}
                 aria-label="Rota animasyonunu tekrar izle"
               >
                 ↻ Tekrar

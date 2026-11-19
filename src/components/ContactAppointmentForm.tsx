@@ -150,11 +150,13 @@ export function ContactAppointmentForm() {
             </a>
             <a
               className="btn whatsapp"
-              href={LOCATIONS.kepez.whatsappHref}
+              href={`${LOCATIONS.kepez.whatsappHref}?text=${encodeURIComponent(
+                `Merhaba AGN Oto Servis, adım ${firstName} ${lastName} (${contact}). Talebim: ${message}`
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              WhatsApp <span>↗</span>
+              WhatsApp&apos;tan İlet <span>↗</span>
             </a>
             <button
               type="button"
