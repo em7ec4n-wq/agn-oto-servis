@@ -32,10 +32,10 @@ export default function HomePage() {
           </div>
           <div className="hero-picture">
             <img
-              src="/assets/hero-mekanik-atolye.webp"
-              alt="AGN atölyesinde motor üzerinde çalışan servis ustası"
+              src="/assets/hasar.webp"
+              alt="AGN Oto Servis hasar onarım ve kaporta atölyesinde ön çamurluğu hasarlı otomobil"
             />
-            <Link className="photo-link" href="/galeri?foto=hero-mekanik-atolye">
+            <Link className="photo-link" href="/galeri?foto=hasar">
               AGN atölyesinden <span>↗</span>
             </Link>
           </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
                 >
                   Öncelikli Hasar Servisi
                 </span>
-                <img src="/assets/hasar.webp" alt="Atölyede ön kısmı hasarlı otomobil" />
+                <img src="/assets/onarim.webp" alt="Hasar onarımı ve fırın boyası tamamlanmış otomobil" />
                 <div>
                   <h3>Hasar ve Onarım</h3>
                   <p>Hasar dosyası, ekspertiz ve onarım.</p>
