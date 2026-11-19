@@ -44,15 +44,19 @@ export default function OtoYikamaPage() {
         <section className="shell">
           <div className="subpage-hero">
             <div>
-              <p className="eyebrow line">MELTEM / ANTALYA</p>
-              <h1>AGN Oto Yıkama &amp; Detaylı Araç Bakımı</h1>
+              <p className="eyebrow line" style={{ color: 'var(--blue-accent)' }}>
+                MELTEM / ANTALYA
+              </p>
+              <h1>
+                AGN Oto Yıkama &amp; <span className="text-blue">Detaylı Araç Bakımı</span>
+              </h1>
               <p>
                 {LOCATIONS.meltem.address}, {LOCATIONS.meltem.city}. Oto yıkama, detaylı yıkama,
                 oto kuaför, pasta cila, seramik, jant ve far parlatma, koltuk yıkama.
               </p>
               <div className="actions" style={{ marginTop: '26px' }}>
                 <a
-                  className="btn white"
+                  className="btn amber"
                   href={LOCATIONS.meltem.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -99,7 +103,7 @@ export default function OtoYikamaPage() {
             <div className="subpage-grid-2">
               {MELTEM_WASH_SERVICES.map((item, idx) => (
                 <article key={idx} className="subpage-card">
-                  <span className="badge-pill">Meltem Lokasyonu</span>
+                  <span className="badge-pill blue">Meltem Lokasyonu</span>
                   <h3 style={{ marginTop: '12px' }}>{item.title}</h3>
                   <p style={{ marginTop: '10px', color: '#101010', fontSize: '14px' }}>
                     {item.desc}

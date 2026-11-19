@@ -145,11 +145,11 @@ export function ContactAppointmentForm() {
             hattımızdan bize ulaşabilirsiniz.
           </p>
           <div className="actions" style={{ marginTop: '18px' }}>
-            <a className="btn white" href={LOCATIONS.kepez.phoneHref}>
+            <a className="btn amber" href={LOCATIONS.kepez.phoneHref}>
               {LOCATIONS.kepez.phoneDisplay} <span>↗</span>
             </a>
             <a
-              className="btn outline"
+              className="btn whatsapp"
               href={LOCATIONS.kepez.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
@@ -266,11 +266,11 @@ export function ContactAppointmentForm() {
                 ulaşabilirsiniz:
               </p>
               <div className="actions" style={{ marginTop: '12px' }}>
-                <a className="btn white" href={LOCATIONS.kepez.phoneHref}>
+                <a className="btn amber" href={LOCATIONS.kepez.phoneHref}>
                   Telefon: {LOCATIONS.kepez.phoneDisplay} <span>↗</span>
                 </a>
                 <a
-                  className="btn outline"
+                  className="btn whatsapp"
                   href={LOCATIONS.kepez.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -301,7 +301,7 @@ export function ContactAppointmentForm() {
             </p>
             <button
               type="submit"
-              className="btn dark"
+              className="btn amber"
               disabled={status === 'submitting'}
             >
               {status === 'submitting' ? 'Gönderiliyor...' : 'Randevu Talebini İlet'} <span>↗</span>

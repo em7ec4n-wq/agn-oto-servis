@@ -28,7 +28,7 @@ export default function HakkimizdaPage() {
                 hasar onarımı, kaporta, fırın boya ve mekanik bakım hizmeti sunuyoruz.
               </p>
               <div className="actions" style={{ marginTop: '26px' }}>
-                <Link className="btn white" href="/iletisim">
+                <Link className="btn amber" href="/iletisim">
                   İletişim &amp; Yol Tarifi <span>↗</span>
                 </Link>
                 <Link className="btn outline" href="/hizmetler">

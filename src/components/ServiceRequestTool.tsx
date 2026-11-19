@@ -149,7 +149,7 @@ export function ServiceRequestTool() {
                   {EXAMPLE_DATA.note}
                 </p>
                 <a
-                  className="btn white"
+                  className="btn whatsapp"
                   href="#talep"
                   onClick={(e) => {
                     e.preventDefault();
@@ -316,7 +316,7 @@ export function ServiceRequestTool() {
 
               {isFormValid ? (
                 <a
-                  className="btn white"
+                  className="btn whatsapp"
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -326,7 +326,7 @@ export function ServiceRequestTool() {
               ) : (
                 <button
                   type="button"
-                  className="btn white"
+                  className="btn whatsapp"
                   disabled
                   aria-disabled="true"
                   onClick={() =>

@@ -29,7 +29,7 @@ export default function SssPage() {
                 hakkında merak edilen soruların yanıtları.
               </p>
               <div className="actions" style={{ marginTop: '26px' }}>
-                <Link className="btn white" href="/iletisim">
+                <Link className="btn amber" href="/iletisim">
                   İletişim &amp; Randevu <span>↗</span>
                 </Link>
                 <Link className="btn outline" href="/#talep">

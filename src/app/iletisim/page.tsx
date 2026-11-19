@@ -57,12 +57,16 @@ export default function IletisimPage() {
               </div>
             </div>
             <div className="locations">
-              <article>
-                <p className="eyebrow">{LOCATIONS.kepez.eyebrow}</p>
+              <article className="kepez">
+                <span className="badge-pill red" style={{ marginBottom: '10px' }}>
+                  Kepez Servis Merkezi
+                </span>
                 <h3>{LOCATIONS.kepez.name}</h3>
                 <p>{LOCATIONS.kepez.address}</p>
                 <p>
-                  <a href={LOCATIONS.kepez.phoneHref}>{LOCATIONS.kepez.phoneDisplay}</a>
+                  <a href={LOCATIONS.kepez.phoneHref} style={{ fontWeight: 800 }}>
+                    {LOCATIONS.kepez.phoneDisplay}
+                  </a>
                   <br />
                   <a href={LOCATIONS.kepez.emailHref}>{LOCATIONS.kepez.email}</a>
                 </p>
@@ -72,14 +76,14 @@ export default function IletisimPage() {
                     href={LOCATIONS.kepez.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: 'underline' }}
+                    style={{ textDecoration: 'underline', color: 'var(--green-whatsapp)', fontWeight: 700 }}
                   >
-                    wa.me/905433621901
+                    wa.me/905433621901 ↗
                   </a>
                 </p>
                 <div className="actions">
                   <a
-                    className="btn white"
+                    className="btn amber"
                     href={LOCATIONS.kepez.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -92,8 +96,10 @@ export default function IletisimPage() {
                 </div>
               </article>
 
-              <article>
-                <p className="eyebrow">{LOCATIONS.meltem.eyebrow}</p>
+              <article className="meltem">
+                <span className="badge-pill blue" style={{ marginBottom: '10px' }}>
+                  Meltem Oto Yıkama &amp; Detaylı Bakım
+                </span>
                 <h3>{LOCATIONS.meltem.name}</h3>
                 <p>{LOCATIONS.meltem.address}</p>
                 <p>{LOCATIONS.meltem.description}</p>
@@ -103,9 +109,9 @@ export default function IletisimPage() {
                     href={LOCATIONS.meltem.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: 'underline' }}
+                    style={{ textDecoration: 'underline', color: 'var(--blue-accent)', fontWeight: 700 }}
                   >
-                    @agnotomotiv
+                    @agnotomotiv ↗
                   </a>
                 </p>
                 <div className="actions">
@@ -119,6 +125,7 @@ export default function IletisimPage() {
                   </a>
                   <a
                     className="btn outline"
+                    style={{ borderColor: 'var(--blue-accent)', color: 'var(--blue-accent)' }}
                     href={LOCATIONS.meltem.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"

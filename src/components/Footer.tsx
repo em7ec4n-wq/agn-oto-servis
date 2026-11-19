@@ -6,7 +6,7 @@ export function Footer() {
     <footer>
       <div className="shell footer-grid">
         <Link href="/" aria-label="Ana sayfa">
-          <img className="logo" src="/assets/agn-logo-beyaz.png" alt="AGN Oto Servis" />
+          <img className="logo" src="/assets/agn-logo-orijinal.png" alt="AGN Oto Servis" />
         </Link>
         <div>
           <Link href="/hizmetler">Hizmetler</Link>

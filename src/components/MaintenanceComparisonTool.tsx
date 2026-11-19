@@ -67,7 +67,11 @@ export function MaintenanceComparisonTool() {
         <div className="compare-cards">
           {activeItems.map((srv) => (
             <article key={srv.slug} className="compare-card">
-              <span className="badge-pill">
+              <span
+                className={`badge-pill ${
+                  srv.slug === 'ucretsiz-checkup' ? 'green' : 'amber'
+                }`}
+              >
                 {srv.slug === 'ucretsiz-checkup' ? 'Kontrol & Gözlem' : 'Yağ & Filtre Değişimi'}
               </span>
               <h3 style={{ marginTop: '12px' }}>{srv.title}</h3>

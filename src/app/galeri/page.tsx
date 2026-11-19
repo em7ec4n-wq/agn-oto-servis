@@ -30,7 +30,7 @@ export default function GaleriPage() {
                 tıklayın.
               </p>
               <div className="actions" style={{ marginTop: '24px' }}>
-                <Link className="btn white" href="/#talep">
+                <Link className="btn amber" href="/#talep">
                   Servis Talebi Oluştur <span>↗</span>
                 </Link>
                 <Link className="btn outline" href="/hizmetler">

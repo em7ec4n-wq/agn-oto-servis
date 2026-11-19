@@ -15,14 +15,14 @@ export default function HomePage() {
             <h1>
               Oto servis ve
               <br />
-              hasar onarımı.
+              <span className="text-amber">hasar onarımı.</span>
             </h1>
             <p>
               Binek ve hafif ticari araçlar için hasar onarımı, kaporta, boya, mekanik servis ve
               periyodik bakım.
             </p>
             <div className="actions">
-              <a className="btn white" href="#talep">
+              <a className="btn amber" href="#talep">
                 Servis Talebi Oluştur <span>↗</span>
               </a>
               <Link className="btn outline" href="/hizmetler">
@@ -80,6 +80,12 @@ export default function HomePage() {
             </div>
             <div className="service-grid">
               <Link className="service featured" href="/hizmetler/hasar-ve-onarim">
+                <span
+                  className="badge-pill red"
+                  style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 1 }}
+                >
+                  Öncelikli Hasar Servisi
+                </span>
                 <img src="/assets/hasar.webp" alt="Atölyede ön kısmı hasarlı otomobil" />
                 <div>
                   <h3>Hasar ve Onarım</h3>
@@ -88,6 +94,12 @@ export default function HomePage() {
                 </div>
               </Link>
               <Link className="service" href="/hizmetler/kaporta-boya">
+                <span
+                  className="badge-pill amber"
+                  style={{ position: 'absolute', top: '14px', left: '14px', zIndex: 1 }}
+                >
+                  Gövde &amp; Fırın Boya
+                </span>
                 <img src="/assets/kaporta.webp" alt="Ön çamurlukta kaporta işlemi" />
                 <div>
                   <h3>Kaporta &amp; Boya</h3>
@@ -96,6 +108,12 @@ export default function HomePage() {
                 </div>
               </Link>
               <Link className="service" href="/hizmetler/mekanik-servis">
+                <span
+                  className="badge-pill dark"
+                  style={{ position: 'absolute', top: '14px', left: '14px', zIndex: 1 }}
+                >
+                  Motor &amp; Yürüyen
+                </span>
                 <img src="/assets/mekanik-servis.webp" alt="Kaputu açık otomobil" />
                 <div>
                   <h3>Mekanik Servis</h3>
@@ -104,6 +122,12 @@ export default function HomePage() {
                 </div>
               </Link>
               <Link className="service" href="/hizmetler/periyodik-bakim">
+                <span
+                  className="badge-pill green"
+                  style={{ position: 'absolute', top: '14px', left: '14px', zIndex: 1 }}
+                >
+                  Yağ &amp; Filtre
+                </span>
                 <img src="/assets/periyodik-bakim.webp" alt="Atölyede hava filtresi kontrolü" />
                 <div>
                   <h3>Periyodik Bakım</h3>
@@ -123,7 +147,10 @@ export default function HomePage() {
             </div>
             <div className="guide-options">
               <div>
-                <h3>Ücretsiz Check-up</h3>
+                <span className="badge-pill green" style={{ marginBottom: '8px' }}>
+                  0 TL · 5 Temel Kontrol
+                </span>
+                <h3 style={{ marginTop: '8px' }}>Ücretsiz Check-up</h3>
                 <p>
                   Frenler, motor sıvıları, lastik diş derinliği, akü ve genel elektrik kontrolleri.
                 </p>
@@ -132,7 +159,10 @@ export default function HomePage() {
                 </Link>
               </div>
               <div>
-                <h3>Periyodik Bakım</h3>
+                <span className="badge-pill amber" style={{ marginBottom: '8px' }}>
+                  Üretici Bakım Planı
+                </span>
+                <h3 style={{ marginTop: '8px' }}>Periyodik Bakım</h3>
                 <p>Motor yağı ve filtre değişimleri, sıvı ve akü kontrolleri.</p>
                 <Link className="text-link" href="/hizmetler/periyodik-bakim">
                   İncele ↗
@@ -182,14 +212,17 @@ export default function HomePage() {
               </div>
               <div className="steps">
                 <div>
+                  <span className="step-num">01 / ADIM</span>
                   <h3>Hasar Dosyası</h3>
                   <p>Servise ulaşın, hasar dosyası açılsın.</p>
                 </div>
                 <div>
+                  <span className="step-num">02 / ADIM</span>
                   <h3>Ekspertiz ve Onay</h3>
                   <p>Ekspertiz ve sigorta onayı koordine edilir.</p>
                 </div>
                 <div>
+                  <span className="step-num">03 / ADIM</span>
                   <h3>Onarım ve Teslim</h3>
                   <p>Onarım tamamlanır, araç teslim edilir.</p>
                 </div>
@@ -201,9 +234,16 @@ export default function HomePage() {
         <section className="campaign">
           <div className="shell campaign-grid">
             <div>
-              <h2>Yağ Bakımına Araç Yıkama Hediye</h2>
-              <p>5.000 TL’den başlayan fiyatlarla.</p>
-              <Link className="btn dark" href="/kampanyalar/yag-bakimi">
+              <span className="badge-pill amber" style={{ marginBottom: '12px' }}>
+                SEZON KAMPANYASI
+              </span>
+              <h2 style={{ marginTop: '8px' }}>
+                Yağ Bakımına <span className="text-amber">Araç Yıkama Hediye</span>
+              </h2>
+              <p style={{ color: 'var(--amber-bright)', fontSize: '20px', fontWeight: 800 }}>
+                5.000 TL’den başlayan fiyatlarla.
+              </p>
+              <Link className="btn amber" href="/kampanyalar/yag-bakimi">
                 Kampanyayı İncele <span>↗</span>
               </Link>
             </div>
@@ -254,18 +294,22 @@ export default function HomePage() {
               </div>
             </div>
             <div className="locations">
-              <article>
-                <p className="eyebrow">KEPEZ / ANTALYA</p>
+              <article className="kepez">
+                <span className="badge-pill red" style={{ marginBottom: '10px' }}>
+                  Kepez Servis Merkezi
+                </span>
                 <h3>AGN Oto Servis</h3>
                 <p>Serik Caddesi No: 97, 07170 Kepez / Antalya</p>
                 <p>
-                  <a href="tel:+905433621901">+90 543 362 19 01</a>
+                  <a href="tel:+905433621901" style={{ fontWeight: 800 }}>
+                    +90 543 362 19 01
+                  </a>
                   <br />
                   <a href="mailto:info@agnotoservis.com">info@agnotoservis.com</a>
                 </p>
                 <div className="actions">
                   <a
-                    className="btn white"
+                    className="btn amber"
                     href="https://www.google.com/maps/dir/?api=1&destination=AGN+Oto+Servis+Serik+Caddesi+97+Kepez+Antalya"
                   >
                     Yol Tarifi ↗
@@ -275,8 +319,10 @@ export default function HomePage() {
                   </Link>
                 </div>
               </article>
-              <article>
-                <p className="eyebrow">MELTEM / ANTALYA</p>
+              <article className="meltem">
+                <span className="badge-pill blue" style={{ marginBottom: '10px' }}>
+                  Meltem Oto Yıkama &amp; Kuaför
+                </span>
                 <h3>AGN Oto Yıkama</h3>
                 <p>
                   Meltem Mahallesi, 100. Yıl Bulvarı, Millet Bahçesi Kapalı Otoparkı, -1. kat
@@ -289,7 +335,11 @@ export default function HomePage() {
                   >
                     Yol Tarifi ↗
                   </a>
-                  <a className="btn outline" href="https://www.instagram.com/agnotomotiv/">
+                  <a
+                    className="btn outline"
+                    style={{ borderColor: 'var(--blue-accent)', color: 'var(--blue-accent)' }}
+                    href="https://www.instagram.com/agnotomotiv/"
+                  >
                     Instagram ↗
                   </a>
                 </div>

@@ -26,12 +26,12 @@ export default function YagBakimiKampanyaPage() {
             <div>
               <p className="eyebrow line">KAMPANYA DETAYI · KEPEZ / ANTALYA</p>
               <h1>{campaign.title}</h1>
-              <p style={{ fontSize: '20px', fontWeight: 700, color: '#fff' }}>
+              <p style={{ fontSize: '20px', fontWeight: 800, color: 'var(--amber-bright)' }}>
                 {campaign.priceText}
               </p>
               <p>{campaign.shortDesc}</p>
               <div className="actions" style={{ marginTop: '26px' }}>
-                <a className="btn white" href={campaign.legacyCtaHref}>
+                <a className="btn amber" href={campaign.legacyCtaHref}>
                   {campaign.legacyCtaText} ({LOCATIONS.kepez.phoneDisplay}) <span>↗</span>
                 </a>
                 <Link className="btn outline" href="/?hizmet=periyodik-bakim#talep">

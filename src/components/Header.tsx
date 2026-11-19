@@ -67,7 +67,7 @@ export function Header() {
           <Link href="/hakkimizda">Hakkımızda</Link>
           <Link href="/iletisim">İletişim</Link>
         </nav>
-        <a className="btn dark nav-call" href="tel:+905433621901">
+        <a className="btn amber nav-call" href="tel:+905433621901">
           Hemen Ara <span>↗</span>
         </a>
         <button
@@ -133,11 +133,11 @@ export function Header() {
               </div>
             </div>
             <div style={{ display: 'grid', gap: '10px' }}>
-              <a className="btn dark" href="tel:+905433621901" style={{ width: '100%' }}>
+              <a className="btn amber" href="tel:+905433621901" style={{ width: '100%' }}>
                 Hemen Ara (+90 543 362 19 01) <span>↗</span>
               </a>
               <Link
-                className="btn outline-dark"
+                className="btn dark"
                 href="/#talep"
                 style={{ width: '100%' }}
                 onClick={() => setMenuOpen(false)}

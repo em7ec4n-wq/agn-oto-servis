@@ -57,12 +57,12 @@ export default function ServiceDetailPage({
               <h1>{service.title}</h1>
               <p>{service.heroDesc}</p>
               {service.priceDisplay && (
-                <p style={{ marginTop: '12px', color: '#fff', fontWeight: 800 }}>
+                <p style={{ marginTop: '12px', color: 'var(--amber-bright)', fontWeight: 800 }}>
                   Ücret / Kapsam: {service.priceDisplay}
                 </p>
               )}
               <div className="actions" style={{ marginTop: '26px' }}>
-                <Link className="btn white" href={service.ctaHref}>
+                <Link className="btn amber" href={service.ctaHref}>
                   {service.ctaText} <span>↗</span>
                 </Link>
                 <a className="btn outline" href={LOCATIONS.kepez.phoneHref}>
@@ -174,13 +174,14 @@ export default function ServiceDetailPage({
                     <p className="eyebrow">SÜREÇ ADIMLARI</p>
                     <h2>Hasar Onarımı Nasıl İlerler?</h2>
                   </div>
-                  <Link className="btn white" href={service.ctaHref}>
+                  <Link className="btn amber" href={service.ctaHref}>
                     {service.ctaText} <span>↗</span>
                   </Link>
                 </div>
                 <div className="steps">
                   {service.processSteps.map((step, i) => (
                     <div key={i}>
+                      <span className="step-num">0{i + 1} / ADIM</span>
                       <h3>{step.title}</h3>
                       <p>{step.desc}</p>
                     </div>
@@ -202,7 +203,7 @@ export default function ServiceDetailPage({
                   </p>
                   <div className="compare-cards" style={{ marginTop: '18px' }}>
                     <article className="compare-card">
-                      <span className="badge-pill">Kontrol Hizmeti (Parça Değişimsiz)</span>
+                      <span className="badge-pill green">Kontrol Hizmeti (Parça Değişimsiz)</span>
                       <h3 style={{ marginTop: '10px' }}>{checkupService.title}</h3>
                       <div className="compare-price">{checkupService.priceDisplay}</div>
                       <ul className="scope-list" style={{ marginBottom: '18px' }}>
@@ -220,7 +221,7 @@ export default function ServiceDetailPage({
                     </article>
 
                     <article className="compare-card">
-                      <span className="badge-pill">Parça &amp; Sıvı Değişimli Bakım</span>
+                      <span className="badge-pill amber">Parça &amp; Sıvı Değişimli Bakım</span>
                       <h3 style={{ marginTop: '10px' }}>{periodicService.title}</h3>
                       <div className="compare-price">{periodicService.priceDisplay}</div>
                       <ul className="scope-list" style={{ marginBottom: '18px' }}>

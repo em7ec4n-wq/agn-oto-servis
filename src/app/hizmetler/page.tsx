@@ -31,7 +31,7 @@ export default function HizmetlerPage() {
                 yıkama ile ücretsiz check-up.
               </p>
               <div className="actions" style={{ marginTop: '24px' }}>
-                <Link className="btn white" href="/#talep">
+                <Link className="btn amber" href="/#talep">
                   Servis Talebi Oluştur <span>↗</span>
                 </Link>
                 <a className="btn outline" href="#karsilastir">
@@ -75,9 +75,27 @@ export default function HizmetlerPage() {
                         marginBottom: '8px',
                       }}
                     >
-                      <span className="badge-pill">Kepez Servis</span>
+                      <span
+                        className={`badge-pill ${
+                          srv.slug === 'ucretsiz-checkup'
+                            ? 'green'
+                            : srv.slug === 'periyodik-bakim'
+                            ? 'amber'
+                            : srv.slug === 'hasar-ve-onarim'
+                            ? 'red'
+                            : 'dark'
+                        }`}
+                      >
+                        {srv.slug === 'ucretsiz-checkup'
+                          ? '0 TL · Kontrol'
+                          : srv.slug === 'hasar-ve-onarim'
+                          ? 'Hasar Servisi'
+                          : srv.slug === 'periyodik-bakim'
+                          ? 'Motor Bakımı'
+                          : 'Kepez Servis'}
+                      </span>
                       {srv.priceDisplay && (
-                        <span style={{ fontSize: '12px', fontWeight: 800 }}>
+                        <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--amber-dark)' }}>
                           {srv.priceDisplay}
                         </span>
                       )}
@@ -108,7 +126,7 @@ export default function HizmetlerPage() {
                 </Link>
                 <div className="catalog-card-body">
                   <div style={{ marginBottom: '8px' }}>
-                    <span className="badge-pill dark">Meltem Şubesi</span>
+                    <span className="badge-pill blue">Meltem Şubesi</span>
                   </div>
                   <h3>
                     <Link href="/oto-yikama">Oto Yıkama, Pasta Cila &amp; Detaylı Bakım</Link>

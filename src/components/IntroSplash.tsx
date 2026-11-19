@@ -35,7 +35,7 @@ export function IntroSplash() {
   return (
     <div className="intro-splash" aria-hidden="true">
       <img
-        src="/assets/agn-logo-beyaz.png"
+        src="/assets/agn-logo-orijinal.png"
         alt=""
         onError={() => setVisible(false)}
       />
