@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { IntroSplash } from '@/components/IntroSplash';
 import { BottomTickerBar } from '@/components/BottomTickerBar';
+import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
 import { SITE_META, LOCATIONS } from '@/data/content';
 
 export const metadata: Metadata = {
@@ -72,6 +73,7 @@ export default function RootLayout({
         />
         <IntroSplash />
         {children}
+        <FloatingWhatsApp />
         <BottomTickerBar />
       </body>
     </html>

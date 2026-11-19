@@ -26,6 +26,7 @@ export function IntroSplash() {
     setClosing(true);
     unmountTimerRef.current = setTimeout(() => {
       setMounted(false);
+      window.dispatchEvent(new Event('agn-loader-done'));
     }, 450);
   };
 
@@ -34,6 +35,7 @@ export function IntroSplash() {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const params = new URLSearchParams(window.location.search);
     if (reduced || params.get('ornek') === '1' || params.get('no-intro') === '1') {
+      window.dispatchEvent(new Event('agn-loader-done'));
       return;
     }
 
@@ -50,7 +52,7 @@ export function IntroSplash() {
       trail.style.strokeDasharray = `${totalLength}`;
       trail.style.strokeDashoffset = `${totalLength}`;
 
-      const DRIVE_DURATION_MS = 2750;
+      const DRIVE_DURATION_MS = 3850;
       const startTime = performance.now();
 
       const updateFrame = (now: number) => {
@@ -81,8 +83,9 @@ export function IntroSplash() {
             setClosing(true);
             unmountTimerRef.current = setTimeout(() => {
               setMounted(false);
+              window.dispatchEvent(new Event('agn-loader-done'));
             }, 480);
-          }, 850);
+          }, 1850);
         }
       };
 

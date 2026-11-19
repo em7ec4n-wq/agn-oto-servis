@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { AntalyaMapDriveSlider } from '@/components/AntalyaMapDriveSlider';
 import { ServiceRequestTool } from '@/components/ServiceRequestTool';
 
 export default function HomePage() {
@@ -40,6 +41,8 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+
+        <AntalyaMapDriveSlider />
 
         <Suspense
           fallback={
@@ -313,6 +316,14 @@ export default function HomePage() {
                     href="https://www.google.com/maps/dir/?api=1&destination=AGN+Oto+Servis+Serik+Caddesi+97+Kepez+Antalya"
                   >
                     Yol Tarifi ↗
+                  </a>
+                  <a
+                    className="btn whatsapp"
+                    href="https://wa.me/905433621901"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp ↗
                   </a>
                   <Link className="btn outline" href="/iletisim#randevu">
                     Randevu Talebi
